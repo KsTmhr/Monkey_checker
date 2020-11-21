@@ -5,14 +5,14 @@
 {% block title %}猿検出・識別アプリ|MonkeyChecker{% endblock %}
 
 {% block head %}
-  <link rel="stylesheet" href="{% static 'css/mystyle.css' %}">
+<link rel="stylesheet" href="{% static 'css/mystyle.css' %}">
 {% endblock %}
 
 {% block content %}
 <div class="container bg-white p-4 w-75 text-center inner_block_top">
   <h2 class="text-info font-weight-bold">MonkeyChecker</h2>
   <span>猿検出・識別アプリ</span>
-  <a class="btn btn-danger btn-lg d-block w-50 m-auto" href="#" role="button">Start</a>
+  <a class="btn btn-danger btn-lg d-block w-50 m-auto" href="{% url 'monkey_detect:detect' %}" role="button">Start</a>
 </div>
 <div class="container bg-white p-4 w-75 text-center inner_block">
   <h2 class="text-info font-weight-bold">使い方</h2>

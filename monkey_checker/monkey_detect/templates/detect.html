@@ -4,8 +4,13 @@
 
 {% block title %}猿を検出します。。。|MonkeyChecker{% endblock %}
 
+{% block head %}
+<link rel="stylesheet" href="{% static '/css/detect.css' %}">
+{% endblock %}
+
 {% block content %}
-
-
-
+<div class="container">
+ <video id="video" autoplay></video>
+</div>
+<script type="text/javascript" src="{% static 'js/webCam.js' %}"></script>
 {% endblock %}
