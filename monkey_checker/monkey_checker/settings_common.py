@@ -130,3 +130,9 @@ MESSAGE_TAGS = {
     messages.SUCCESS: 'alert alert-success',
     messages.INFO: 'alert alert-info',
 }
+
+STATICFILES_DIRS = (
+
+    os.path.join(BASE_DIR, 'static'),
+
+)

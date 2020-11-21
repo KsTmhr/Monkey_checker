@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}猿検出・識別アプリ|MonkeyChecker{% endblock %}
+
+{% block head %}
+  <link rel="stylesheet" href="{% static 'css/mystyle.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="container bg-white p-4 w-75 text-center inner_block_top">
+  <h2 class="text-info font-weight-bold">MonkeyChecker</h2>
+  <span>猿検出・識別アプリ</span>
+  <a class="btn btn-danger btn-lg d-block w-50 m-auto" href="#" role="button">Start</a>
+</div>
+<div class="container bg-white p-4 w-75 text-center inner_block">
+  <h2 class="text-info font-weight-bold">使い方</h2>
+  <p>①カメラを猿に向ける</p>
+  <p>②ボタンを押して、キャプチャ</p>
+  <p>③キャプチャした画像を分析開始！</p>
+  <p>④猿発見！</p>
+</div>
+<div class="container bg-white p-4 w-75 text-center inner_block">
+  <h2 class="text-info font-weight-bold">猿を発見できる！</h2>
+  <p>画像内に何匹猿がいるかわかります(検出できないときもあります)</p>
+</div>
+<div class="container bg-white p-4 w-75 text-center inner_block">
+  <h2 class="text-info font-weight-bold">ボスザルがわかる！</h2>
+  <p>画像内のどれがボスザルか識別できます(検出できないときもあります)</p>
+</div>
+{% endblock %}
