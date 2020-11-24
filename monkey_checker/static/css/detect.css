@@ -1,6 +1,33 @@
+
+body{
+  background-color: #343a40!important;
+  height: 100vh;
+}
+
 #video{
-  padding: 0;
-  margin: 0;
+  position: fixed;
   width: 100%;
-  height: 100%;
+}
+
+#img{
+    position: fixed;
+    width: 100%;
+    z-index: -1;
+}
+
+.Btn{
+  position: fixed;
+  bottom: 0;
+  margin: 10px;
+  width: 40%;
+  height: 7%;
+  border-radius: 10px!important;
+}
+
+#stop_btn{
+  left: 0;
+}
+
+#detect_btn{
+  right: 0;
 }

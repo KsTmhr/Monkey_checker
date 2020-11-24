@@ -9,8 +9,9 @@
 {% endblock %}
 
 {% block content %}
-<div class="container">
- <video id="video" autoplay></video>
-</div>
+<video id="video" autoplay></video>
+<img id="img" alt="表示できません">
+<button class="btn btn-info Btn" id="stop_btn">ストップ</button>
+<button class="btn btn-danger Btn" id="detect_btn">分析開始</button>
 <script type="text/javascript" src="{% static 'js/webCam.js' %}"></script>
 {% endblock %}
