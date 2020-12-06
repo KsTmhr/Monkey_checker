@@ -12,6 +12,9 @@
 <video id="video" autoplay></video>
 <img id="img" alt="表示できません">
 <button class="btn btn-info Btn" id="stop_btn">ストップ</button>
+
+{% csrf_token %}
 <button class="btn btn-danger Btn" id="detect_btn">分析開始</button>
+
 <script type="text/javascript" src="{% static 'js/webCam.js' %}"></script>
 {% endblock %}
