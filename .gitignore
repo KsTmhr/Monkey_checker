@@ -1,2 +1,3 @@
 __pycache__/
 *.pt
+local_settings.py
