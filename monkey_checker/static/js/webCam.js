@@ -38,7 +38,9 @@ media = navigator.mediaDevices.getUserMedia({
 
   stop_btn.onclick = e => {  // ボタンが押されたら
     if(!imgIsTaken){          // 写真が撮ってない場合、撮って、imgIsTakenを切り替える
-      takeASnap().then(stop);
+      //takeASnap().then(stop);
+      takeASnap()
+      stop()
       imgIsTaken = true;
 
     }else{                   // 撮ってある場合、カメラリリース後、imgIsTakenを切り替える
@@ -55,14 +57,16 @@ function takeASnap(){
   canvas.width = video.videoWidth; // サイズをcanvasに合わせる
   canvas.height = video.videoHeight;
   ctx.drawImage(video, 0,0); // the video
-  return new Promise((res, rej)=>{
+  /* return new Promise((res, rej)=>{
     canvas.toBlob(res, 'image/jpeg'); // canvasを blob に変換する
-  });
+  }); */
+  img_url = canvas.toDataURL("image/jpeg")
 }
 
 // 撮った画像表示
-function stop(blob){
-  img_url = URL.createObjectURL(blob);// blobの url を作る
+//function stop(blob){
+function stop(){
+  //img_url = URL.createObjectURL(blob);// blobの url を作る
   img.src = img_url; // imgを指定
   img.style.display = 'block'; // imgを可視化
   video.style.display = 'none'; // videoを不可視化
@@ -121,10 +125,13 @@ $("#detect_btn").on('click', function() {
     data: {
       'detect_img':img_url, // 撮った写真のURLを送る
     },
-    dataType: "text",
+    dataType: "image/jpeg",
   })
   .done( function(data) { // 成功した場合の処理
-    alert(data); // 分析後のデータを表示
+    img.src = '/static/js/result/new_img.jpg'; // imgを指定
+    img.style.display = 'block'; // imgを可視化
+    video.style.display = 'none'; // videoを不可視化
+    btn_text.data = '撮り直す' // btnの文字を変更
   })
 });
 

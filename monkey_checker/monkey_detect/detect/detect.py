@@ -8,6 +8,7 @@ import cv2
 import torch
 import torch.backends.cudnn as cudnn
 from numpy import random
+from PIL import Image, ImageFilter #テストに使用
 
 from monkey_detect.detect.models.experimental import attempt_load # manage.pyからの相対パスで指定しないと読まない
 from monkey_detect.detect.utils.datasets import LoadStreams, LoadImages # 単体でテストするときは"monkey_detect.detect.detect."を丸ごと削る
@@ -20,9 +21,17 @@ from django.conf import settings
 
 base_dir = str(settings.BASE_DIR) # base_dir + 〜　の形でPathを指定する
 
-def detect(source, img_size=640):
+def detect(img_size=640):
     weights = base_dir + '/monkey_detect/detect/last.pt'
     out = base_dir + '/static/js/result' # 画像保存先
+    """
+    im = Image.open(source)
+    new_im = im.convert('L')
+    new_im.save(out+"/new_img.jpg")
+
+    """
+    source = base_dir + "/monkey_detect/detect/monkey.JPG"
+
     imgsz = img_size
     view_img = True
     print(weights)
